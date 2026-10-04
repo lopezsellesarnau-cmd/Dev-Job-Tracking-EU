@@ -21,3 +21,4 @@ DESICIONS
 8_ Adzuna becouse is where we can get actual data from the selected countries and we can get an API from Adzuna to conect that data into our project.
 9_FastAPI because python framwork and and I can build a robust and efficent API and is one of the fasted framworks in python and offering performance benchmarks comparable to Node.js
 10_ Fetch.py because it collects the data from the Adzuna.
+11_ Based on the first version on the project i've seen that some roles like "Product Engineer" or "Design Engineer has way more roles opened than frontend or backend because those roles also incloude mechanical or not dev roles, and the overall data is not saying if they are senior or junior, in this case we are looking for "junior" roles. 
