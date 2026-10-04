@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Jobs Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Developer Jobs Tracker</h1>
+        <p>Helping junior developers understand how the market is moving
+            and the opportunities starting from today.
+        </p>
+    </header>
+    <main>
+        <div class="section-head">
+            <h2>Job openings by role</h2>
+            <p class="meta" id="meta">[00] rows</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Role</th>
+                    <th>Jobs</th>
+                </tr>
+            </thead>
+            <tbody id="results"></tbody>
+        </table>
+    </main>
+    <footer>
+        <p>Data: Adzuna API · Built by Arnau López</p>
+    </footer>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
