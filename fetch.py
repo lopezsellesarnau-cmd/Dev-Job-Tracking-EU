@@ -20,19 +20,33 @@ def get_count(country, role):
     return response.json()["count"]
 
 
+def show_title(country, role):
+    url = f"https://api.adzuna.com/v1/api/jobs/{country}/search/1"
+    params = {
+        "app_id": APP_ID,
+        "app_key": APP_KEY,
+        "title_only": role,
+        "results_per_page": 10,
+    }
+    response = requests.get(url, params=params)
+    jobs = response.json()["results"]
+
+    for job in jobs:
+        print(job["title"])
+
+
 COUNTRIES = ["es", "nl", "de", "be"]
 ROLES = {
     "frontend": ["front end", "frontend", "Frontend-Entwickler", "Desarrollador Front"],
-    "backend": ["back end", "backend", "Backend-Entwickler", "Desarrolador Backend"],
+    "backend": ["back end", "backend", "Backend-Entwickler", "Desarrollador Backend"],
     "full stack": ["full stack", "fullstack"],
     "ux": ["ux & ui", "UX/UI"],
-    "product": ["javascript product developer", "javascript product engineer", "HTML developer", "figma designer engineer"],
-    "technology": ["python developer", "javascript developer", "node.js developer", "python-Entwickler", "javascript-Entwickler"],
 }
 
-for country in COUNTRIES:
-    for role, terms in ROLES.items():
-        total = 0
-        for term in terms:
-            total = total + get_count(country, term)
-        print(f"{country} | {role}: {total}")
+# for country in COUNTRIES:
+show_title("de", "full stack")
+#    for role, terms in ROLES.items():
+#        total = 0
+#        for term in terms:
+#            total = total + get_count(country, term)
+#        print(f"{country} | {role}: {total}")
