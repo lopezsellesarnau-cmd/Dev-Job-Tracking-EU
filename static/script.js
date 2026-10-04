@@ -7,7 +7,7 @@ async function loadCounts() {
     for (const row of rows) {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td>${row.counrty}</td>
+            <td>${row.country}</td>
             <td>${row.role}</td>
             <td>${row.count}</td>
         `;
