@@ -1,6 +1,8 @@
 import os
 import requests
 from dotenv import load_dotenv
+from datetime import date
+from db import create_table, save_count
 
 load_dotenv()
 
@@ -37,19 +39,24 @@ def show_title(country, role):
 
 COUNTRIES = ["es", "nl", "de", "be"]
 ROLES = {
-    "frontend": ["front end", "frontend", "Frontend-Entwickler", "Desarrollador Front"],
-    "backend": ["back end", "backend", "Backend-Entwickler", "Desarrollador Backend"],
+    "frontend": ["front end", "frontend", "Desarrollador Front"],
+    "backend": ["back end", "backend", "Desarrollador Backend"],
     "full stack": ["full stack", "fullstack"],
-    "ux": ["ux & ui", "UX/UI"],
-    "software developer": ["software developer", "software engineer", "desarrollo de software"],
+    "ux": ["ux"],
+    "software developer": ["software developer", "software engineer",
+                           "softwareontwikkelaar", "desarrollador de software", "Softwareentwickler", "Software-Entwickler"],
     "web developer": ["web developer", "desarrollador web", "Webentwickler"],
-    "mobile developer": ["mobile developer", "react native"]
+    "mobile developer": ["mobile developer", "react native", "App-Entwickler"]
 }
 
-# for country in COUNTRIES:
-show_title("nl", "mobile developer")
-#    for role, terms in ROLES.items():
-#        total = 0
-#        for term in terms:
-#            total = total + get_count(country, term)
-#        print(f"{country} | {role}: {total}")
+create_table()
+today = date.today().isoformat()
+
+for country in COUNTRIES:
+    # show_title("nl", "mobile developer")
+    for role, terms in ROLES.items():
+        total = 0
+        for term in terms:
+            total = total + get_count(country, term)
+        print(f"{country} | {role}: {total}")
+        save_count(today, country, role, total)
