@@ -27,3 +27,13 @@ def save_count(date, country, role, count):
     )
     conn.commit()
     conn.close()
+
+
+def get_counts():
+    conn = sqlite3.connect(DB_FILE)
+    conn.row_factory = sqlite3.Row
+    rows = conn.execute(
+        "SELECT date, country, role, count FROM job_counts"
+    ).fetchall()
+    conn.close()
+    return [dict(row) for row in rows]

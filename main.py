@@ -1,2 +1,9 @@
 from fastapi import FastAPI
-import pandas as ps
+from db import get_counts
+
+app = FastAPI()
+
+
+@app.get("/counts")
+def counts():
+    return get_counts()
