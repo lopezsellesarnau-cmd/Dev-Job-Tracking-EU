@@ -41,10 +41,13 @@ ROLES = {
     "backend": ["back end", "backend", "Backend-Entwickler", "Desarrollador Backend"],
     "full stack": ["full stack", "fullstack"],
     "ux": ["ux & ui", "UX/UI"],
+    "software developer": ["software developer", "software engineer", "desarrollo de software"],
+    "web developer": ["web developer", "desarrollador web", "Webentwickler"],
+    "mobile developer": ["mobile developer", "react native"]
 }
 
 # for country in COUNTRIES:
-show_title("de", "full stack")
+show_title("nl", "mobile developer")
 #    for role, terms in ROLES.items():
 #        total = 0
 #        for term in terms:

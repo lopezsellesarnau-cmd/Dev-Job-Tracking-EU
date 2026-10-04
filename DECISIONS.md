@@ -9,6 +9,7 @@ STEPS
 6_ Create the CSS file to apply the style (minimal, clear, white, thin lines, smooth lecture.)
 7_ Connect with the JS file script.js to connect the frontand and backend.
 8_ Create a 2D map for the countries, the one that more jobs available for juniors is bigger than the others, from bigger to smaller. (related with the data).
+9_ Next step is to filter the senior by role and country. (% senior = count("senior frontend") / count("frontend") × 100)
 
 DESICIONS
 1_ Use SQLite because is an embeded, serverless database engine that reads and writes in one single file, instead of PostgreSQL, because v1 doesn't need a server, and I can move later if it grows.
@@ -24,4 +25,5 @@ DESICIONS
 11_ Based on the first version on the project i've seen that some roles like "Product Engineer" or "Design Engineer has way more roles opened than frontend or backend because those roles also incloude mechanical or not dev roles, and the overall data is not saying if they are senior or junior, in this case we are looking for "junior" roles. 
 12_ I've used the variable show_title to take a closer look at "product engineer" in DE(Germany) I have concluded that many of those roles are with a hardware focus not software which is the porpuse of the project, so I have decided to exclude "product engineer" for this version. The same applys to "Design Engineer" since most of the titles are: "electromechanics", "nanotech", "warfare".
 13_ Testing different roles I have seen that most of the roles are not junior but senior or doesn't specify the role level. I have decided to keep the senior and junior together and look the actual trend of the market.
-14_ Based on printing the titles from diferent roles, I have seen that in DE(Germany), many of the jobs are senior with the exception of full stack and more or less UX/UI. 
+14_ Based on printing the titles from diferent roles, I have seen that in DE(Germany), many of the jobs are senior with the exception of full stack and more or less UX/UI.
+15_ After testing the previous roles (Fronend, Backend, Full Stack & UX) I have seen the need of ad new roles that i didn't inclouded on the v1, I have added Web developer, software developer and mobile developer. After seeing the data tested in the regions DE and NL, I have concluded that the more specific it is like pure fronend and pure backend more senior roles are, and the more generics like full stack, web dev, or software dev have more "junior" & eng job postings. 
